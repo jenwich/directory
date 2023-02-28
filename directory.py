@@ -1,17 +1,26 @@
+owners = [
+    { 'id': 1, 'name': 'steve' },
+]
+
 files = [
     { 'id': 1, 'name': 'hello', 'folder_id': 1, 'label_ids': [1, 2] },
-    { 'id': 2, 'name': 'world', 'folder_id': 1, 'label_ids': [1] },
-    { 'id': 3, 'name': 'bye', 'folder_id': 2, 'label_ids': [] },
+    { 'id': 2, 'name': 'world', 'folder_id': 1, 'label_ids': [2] },
+    { 'id': 3, 'name': 'bye', 'folder_id': 2, 'label_ids': [1], 'attrs': [ { 'attr_id': 1, 'value': 'red' } ] },
 ]
 
 folders = [
-    { 'id': 1, 'name': 'greeting' },
-    { 'id': 2, 'name': 'farewell' },
+    { 'id': 1, 'owner_id': 1, 'name': 'greeting' },
+    { 'id': 2, 'owner_id': 1, 'name': 'farewell' },
 ]
 
 labels = [
-    { 'id': 1, 'name': 'color' },
-    { 'id': 2, 'name': 'size' }
+    { 'id': 1, 'owner_id': 1, 'name': 'action' },
+    { 'id': 2, 'owner_id': 1, 'name': 'object' },
+]
+
+attrs = [
+    { 'id': 1, 'owner_id': 1, 'name': 'color' },
+    { 'id': 2, 'owner_id': 1, 'name': 'size' },
 ]
 
 def get_files_in_folder(folder_id):
